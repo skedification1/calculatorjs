@@ -45,7 +45,7 @@ const CalcForm = ({
       <div className="row_input">
         <input
           className="inp"
-          placeholder="input value"
+          placeholder="input value1"
           type="text"
           name="name"
           value={numberNow}

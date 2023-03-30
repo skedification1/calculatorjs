@@ -27,29 +27,38 @@ function App() {
           numArr[t] = numArr[t] + strNum[i];
         }
       }
-      //MULT DEVID
+      //MULT DEVID `${Math.round(`${parseFloat(storedNumber) * parseFloat(number) * 1000}`) / 1000}`
       for (let i = 0; i < numArr.length; i++) {
         if (operantArr[i] === '*') {
-          numArr[i + 1] = numArr[i] * numArr[i + 1];
-          numArr.splice(i, 1); // начиная со второго элемента удаляем один элемент
+          // numArr[i + 1] = Number(numArr[i]) * Number(numArr[i + 1]);
+          numArr[i + 1] = `${
+            Math.round(`${parseFloat(numArr[i]) * parseFloat(numArr[i + 1]) * 1000}`) / 1000
+          }`;
+          ///
+          numArr.splice(i, 1); // нач со втор эл удаляем один эл
           operantArr.splice(i, 1);
           i--;
         } else if (operantArr[i] === '/') {
-          numArr[i + 1] = numArr[i] / numArr[i + 1];
+          //numArr[i + 1] = Number(numArr[i]) / Number(numArr[i + 1]);
+          numArr[i + 1] = `${
+            Math.round(`${(parseFloat(numArr[i]) / parseFloat(numArr[i + 1])) * 1000}`) / 1000
+          }`;
+
           numArr.splice(i, 1); //
           operantArr.splice(i, 1);
           i--;
         }
       }
-      //SUM _ MINUS
+      //SUM _ MINUS (0.1 * 100 + 0.2 * 100) / 100;
       for (let i = 0; i < numArr.length; i++) {
         if (operantArr[i] === '+') {
-          numArr[i + 1] = Number(numArr[i]) + Number(numArr[i + 1]);
+          //  numArr[i + 1] = Number(numArr[i]) + Number(numArr[i + 1]);
+          numArr[i + 1] = (Number(numArr[i]) * 100 + Number(numArr[i + 1]) * 100) / 100;
           numArr.splice(i, 1); //
           operantArr.splice(i, 1);
           i--;
         } else if (operantArr[i] === '-') {
-          numArr[i + 1] = Number(numArr[i]) - Number(numArr[i + 1]);
+          numArr[i + 1] = (Number(numArr[i]) * 100 - Number(numArr[i + 1]) * 100) / 100;
           numArr.splice(i, 1); //
           operantArr.splice(i, 1);
 
