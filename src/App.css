@@ -1,38 +1,127 @@
-.App {
-  text-align: center;
+html,
+body {
+  height: 100%;
+  /* overflow: hidden; */
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Fjalla One', sans-serif;
+}
+.container {
+  background: #c4b3a3;
+  background: radial-gradient(circle farthest-side at center center, #377c31 0%, #7e7267 100%);
+
+  position: relative;
+  max-width: 1400px;
+  height: 100vh;
+  margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
+.calcFormAll {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: 435px;
+  width: 300px;
+  background-color: #c4b3a3;
+}
+.wrapper_btns {
+  /* border: 1px solid rgb(0, 255, 98); */
+  padding-top: 3px;
+}
+.row_input [type='text'] {
+  height: 45px;
+  width: 300px;
+  font-size: 18px;
+  outline: none;
+  text-align: right;
+
+  background: #363131;
+  border: none;
+  color: #fff;
+}
+.row_btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+
+  /* border: 1px solid red; */
+  margin: auto;
+  /* justify-content: space-between; */
+}
+.btn1 {
+  height: 69px;
+  width: 70px;
+  font-size: 32px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #3775dd;
+  box-shadow: 0 2px #21487f;
+  cursor: pointer;
+  outline: none;
+  margin: 1px 1px 1px 0;
+}
+.btn2 {
+  height: 69px;
+  width: 140px;
+  font-size: 36px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #9a17e6;
+  box-shadow: 0 2px #21487f;
+  cursor: pointer;
+  outline: none;
+  border-radius: 4px;
+  margin: 1px 1px 1px 1px;
+}
+.imp2 {
+  height: 45px;
+  width: 300px;
+  font-size: 10px;
+  outline: none;
+  text-align: right;
+
+  background: #363131;
+  border: none;
+  color: #fff;
+}
+.btn1:hover {
+  background-color: #002fed;
+}
+.btn1:active {
+  background-color: #2f599e !important;
+}
+
+.btn1:disabled {
+  background-color: #6c87b5;
+  pointer-events: none;
+}
+/*  */
+.btn2:hover {
+  background-color: #35ac1d;
+}
+.btn2:active {
+  background-color: #41702f !important;
+}
+
+.btn2:disabled {
+  background-color: #41702f;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.row_input_2 [type='text'] {
+  height: 25px;
+  width: 300px;
+  font-size: 14px;
+  outline: none;
+  text-align: right;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  background: #363131;
+  border: none;
+  color: #fff;
 }
